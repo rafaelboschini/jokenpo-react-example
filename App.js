@@ -7,31 +7,23 @@
  */
 
 import React, {Component} from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image, Text } from 'react-native';
 import Topo from './src/topo';
 import Footer from './src/footer';
+import Body from './src/body';
 
-const styles = StyleSheet.create({
+const stylebody = StyleSheet.create({
   parentContainer: {
     flex: 1,
-  },
-  bodyContainer: {
-    flex: 2,
-    backgroundColor: '#eeeeee',
-  },
+  }
 });
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.parentContainer}>
+      <View style={stylebody.parentContainer}>
         <Topo></Topo>
-
-        <View style={styles.bodyContainer}>
-          <Text>Body</Text>
-
-        </View>
-
+        <Body></Body>
         <Footer></Footer>
       </View>
     );
