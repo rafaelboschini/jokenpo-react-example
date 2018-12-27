@@ -8,6 +8,8 @@
 
 import React, {Component} from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import Topo from './src/topo';
+import Footer from './src/footer';
 
 const styles = StyleSheet.create({
   parentContainer: {
@@ -15,15 +17,7 @@ const styles = StyleSheet.create({
   },
   bodyContainer: {
     flex: 2,
-    borderColor: '#00FF00',
-    borderWidth: 2,
-  },
-  othersContainer: {
-    flex: 1,
-    borderColor: '#FF0000',
-    borderWidth: 2,
-    justifyContent:'center',
-    alignItems:'center',
+    backgroundColor: '#eeeeee',
   },
 });
 
@@ -31,40 +25,17 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.parentContainer}>
-        <Top></Top>
-        <Body></Body>
+        <Topo></Topo>
+
+        <View style={styles.bodyContainer}>
+          <Text>Body</Text>
+
+        </View>
+
         <Footer></Footer>
       </View>
     );
   }
 }
 
-class Body extends Component {
-  render() {
-    return (
-      <View style={styles.bodyContainer}>
-        <Text>Body</Text>
-      </View>
-      );
-    }
-}
 
-class Top extends Component {
-  render() {
-    return (
-      <View style={styles.othersContainer}>
-        <Text>[TOP]</Text>
-      </View>
-      );
-    }
-}
-
-class Footer extends Component {
-  render() {
-    return (
-      <View style={styles.othersContainer}>
-        <Text>[FOOTER]</Text>
-      </View>
-      );
-    }
-}
