@@ -96,8 +96,8 @@ export default class Body extends Component {
                 <View></View>
             :
                <View style={styles.resultContainer}>
-                    <Text>Resultado {this.state.resultado}</Text>
-                    <Text>O computador escolheu {this.state.escolhaComputador}</Text>
+                   <Text>O computador escolheu {this.state.escolhaComputador}</Text>
+                    <Text>Resultado: {this.state.resultado}</Text>                   
                     {(this.state.resultado=='Usuário ganhou'? <ResutWin></ResutWin> : <ResutLose></ResutLose>)}
                 </View>
             )}
@@ -120,7 +120,7 @@ export default class Body extends Component {
     optionContainer:{
       flexDirection: 'row',
       justifyContent: 'space-between',
-      marginTop: 40,
+      marginTop: 10,
       paddingLeft: 20,
       paddingRight: 20,
     },
@@ -137,7 +137,9 @@ export default class Body extends Component {
       height: 40,      
     },
     resultContainer: {
+        flex: 1,
+        flexDirection: 'column',
         justifyContent: 'center',
-        alignContent:'center',
+        alignItems: 'center',
     }
   });
