@@ -7,25 +7,27 @@
  */
 
 import React, {Component} from 'react';
-import { View, StyleSheet, TouchableOpacity, Image, Text } from 'react-native';
-import Topo from './src/topo';
-import Footer from './src/footer';
-import Body from './src/body';
+import { Navigator } from 'react-native-deprecated-custom-components';
 
-const stylebody = StyleSheet.create({
-  parentContainer: {
-    flex: 1,
-  }
-});
+import CenaPrincipal from './src/scenes/cenaPrincipal';
+import CenaSplash from './src/scenes/cenaSplash';
 
 export default class App extends Component {
   render() {
     return (
-      <View style={stylebody.parentContainer}>
-        <Topo></Topo>
-        <Body></Body>
-        <Footer></Footer>
-      </View>
+      <Navigator
+        initialRoute={{ id: 'a' }}
+        renderScene={(route,navigator) => {
+
+          if(route.id==='b'){
+            return(<CenaPrincipal navigator={navigator} />);
+          }
+          
+          if(route.id==='a'){
+            return(<CenaSplash navigator={navigator} />);
+          }
+        }}
+      />
     );
   }
 }
